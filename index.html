@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca Universidad Nacional de Trujillo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        principal: "#071B3B",
+                        secundario: "#3869F3"
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+</head>
+
+<body class="bg-[#f5f7fb] text-[#071B3B] transition-colors duration-300 dark:bg-[#101729] dark:text-white">
+
+    <header class="fixed top-0 z-50 w-full bg-[#071B3B]/85 backdrop-blur-md transition-colors dark:bg-[#020817]/90">
+
+        <nav
+            class="barranav fixed top-0 left-0 z-[1000] flex w-full items-center justify-between bg-[rgba(7,27,59,.85)] px-[5%] backdrop-blur-md">
+
+            <a href="https://www.unitru.edu.pe/"
+                target="_blank"
+                class="flex items-center gap-3 no-underline">
+
+                <img
+                    src="./img/Logo_UNT.png"
+                    alt="logo"
+                    class="h-[100px] w-[100px] object-contain">
+
+                <div class="leading-none">
+
+                    <span class="text-[12px] tracking-[1px] text-[#d6e4ff]">
+                        Universidad Nacional de Trujillo
+                    </span>
+
+                    <h2 class="text-[28px] font-bold text-white">
+                        UNT
+                    </h2>
+
+                </div>
+
+            </a>
+
+            <button id="btnMenu" class="block text-3xl text-white md:hidden">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <ul class="hidden list-none gap-[50px] lg:flex">
+
+                <li>
+                    <a href=""
+                        class="font-medium text-[18px] text-white transition hover:text-[#4f83ff]">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href=""
+                        class="font-medium text-[18px] text-white transition hover:text-[#4f83ff]">
+                        Explorar
+                    </a>
+                </li>
+
+                <li>
+                    <a href=""
+                        class="font-medium text-[18px] text-white transition hover:text-[#4f83ff]">
+                        Tesis
+                    </a>
+                </li>
+
+                <li>
+                    <a href=""
+                        class="font-medium text-[18px] text-white transition hover:text-[#4f83ff]">
+                        Escuelas
+                    </a>
+                </li>
+
+                <li>
+                    <a href=""
+                        class="font-medium text-[18px] text-white transition hover:text-[#4f83ff]">
+                        Ayuda
+                    </a>
+                </li>
+
+            </ul>
+
+            <div id="botonesNav" class="flex gap-4 hidden lg:flex">
+
+                <button
+                    class="modo_oscuro flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-lg border border-white/20 bg-transparent text-[18px] text-white transition hover:bg-white/10">
+
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+
+                </button>
+
+                <button
+                    class="inicio_sesion flex cursor-pointer items-center gap-2 rounded-lg bg-[#135dde] px-4 py-2 font-medium text-white transition hover:bg-[#1c3e9a]">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    Acceder
+
+                </button>
+
+            </div>
+
+            <div id="menuMovil" class="absolute left-0 top-full hidden w-full bg-[#071B3B] lg:hidden">
+
+                <ul class="flex flex-col items-center gap-6 py-6">
+
+                    <li><a href="" class="text-white text-lg">Inicio</a></li>
+                    <li><a href="" class="text-white text-lg">Explorar</a></li>
+                    <li><a href="" class="text-white text-lg">Tesis</a></li>
+                    <li><a href="" class="text-white text-lg">Escuelas</a></li>
+                    <li><a href="" class="text-white text-lg">Ayuda</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section
+        class="flex h-[180px] items-center justify-center rounded-b-2xl bg-gradient-to-b from-[#04152D] via-[#091a38] to-[#113597] pt-[100px] shadow-[0_10px_25px_rgba(0,0,0,0.12)]">
+
+        <div
+            class="mx-auto flex w-[65%] h-11 items-center gap-4 rounded-[20px] border border-white/20 bg-[rgba(123,159,250,0.5)] p-3 backdrop-blur-[15px] dark:bg-white/10 dark:border-white/10">
+
+            <i class="fa-solid fa-magnifying-glass ml-2 text-lg text-white"></i>
+
+            <input
+                type="text"
+                placeholder="Buscar libros, tesis, autores o revistas..."
+                class="flex-1 border-none bg-transparent text-[17px] text-white outline-none placeholder:text-white/70">
+
+        </div>
+
+    </section>
+
+
+<section class="px-[7%] py-5">
+
+    <div class="mb-[18px] flex items-center justify-between">
+
+        <div>
+            <h2 class="mb-2 text-[34px] font-bold text-[#071B3B] dark:text-white">
+                Libros en Tendencia
+            </h2>
+        </div>
+
+        <a href=""
+            class="font-medium text-[17px] text-[#3869F3] transition hover:text-blue-700">
+
+            Ver todos
+            <i class="fa-solid fa-arrow-right ml-1"></i>
+
+        </a>
+
+    </div>
+
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[50px]">
+
+
+        <div
+            class="overflow-hidden rounded-[15px] bg-white dark:bg-[#182338] dark:shadow-black/40 transition duration-300 hover:-translate-y-2">
+
+            <img
+                src="./img/AM_2.gif"
+                alt="Libro"
+                class="h-[300px] w-full object-cover">
+
+            <div class="p-[10px]">
+
+                <span class="text-[13px] font-bold text-[#3869F3]">
+                    Matemáticas
+                </span>
+
+                <h3 class="mt-[10px] mb-2 text-[20px] font-semibold">
+                    Análisis Matemático 2
+                </h3>
+
+                <p class="text-gray-500 dark:text-gray-400">
+                    Espinoza Ramos
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="overflow-hidden rounded-[15px] bg-white dark:bg-[#182338] dark:shadow-black/40 transition duration-300 hover:-translate-y-2">
+
+            <img
+                src="./img/Anatomia.png"
+                alt="Libro"
+                class="h-[300px] w-full object-cover">
+
+            <div class="p-[10px]">
+
+                <span class="text-[13px] font-bold text-[#3869F3]">
+                    Anatomía
+                </span>
+
+                <h3 class="mt-[10px] mb-2 text-[20px] font-semibold">
+                    Atlas de la Anatomía Humana
+                </h3>
+
+                <p class="text-gray-500 dark:text-gray-400">
+                    Frank Netter
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="overflow-hidden rounded-[15px] bg-white dark:bg-[#182338] dark:shadow-black/40 transition duration-300 hover:-translate-y-2">
+
+            <img
+                src="./img/SQL.jpg"
+                alt="Libro"
+                class="h-[300px] w-full object-cover">
+
+            <div class="p-[10px]">
+
+                <span class="text-[13px] font-bold text-[#3869F3]">
+                    Base de datos
+                </span>
+
+                <h3 class="mt-[10px] mb-2 text-[20px] font-semibold">
+                    Aprende SQL en un fin de semana
+                </h3>
+
+                <p class="text-gray-500 dark:text-gray-400">
+                    Antonio Padial
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="overflow-hidden rounded-[15px] bg-white dark:bg-[#182338] dark:shadow-black/40 transition duration-300 hover:-translate-y-2">
+
+            <img
+                src="./img/El_Principe.png"
+                alt="Libro"
+                class="h-[300px] w-full object-cover">
+
+            <div class="p-[10px]">
+
+                <span class="text-[13px] font-bold text-[#3869F3]">
+                    Ciencia Política
+                </span>
+
+                <h3 class="mt-[10px] mb-2 text-[20px] font-semibold">
+                    El Príncipe
+                </h3>
+
+                <p class="text-gray-500 dark:text-gray-400">
+                    Nicolás Maquiavelo
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="px-[7%] pt-5 pb-10">
+
+    <div class="mb-[30px]">
+
+        <h2 class="mb-2 text-[34px] font-bold text-[#071B3B] dark:text-white">
+            Áreas Más Consultadas
+        </h2>
+
+        <p class="text-gray-500 dark:text-gray-400">
+            Explora recursos académicos por temas de interés.
+        </p>
+
+    </div>
+
+    <div class="flex flex-wrap gap-[18px]">
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-robot text-[20px] text-[#3869F3] transition group-hover:text-white"></i>
+            <span class="font-medium">Inteligencia Artificial</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-code text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Programación</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-network-wired text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Redes</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-database text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Base de Datos</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-chart-line text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Matemáticas</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-microchip text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Ciberseguridad</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-cloud text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Cloud Computing</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-flask text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Investigación Científica</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-chart-simple text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Gestión Empresarial</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-bullhorn text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Marketing</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-compass-drafting text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Arquitectura y Diseño</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-coins text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Finanzas</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-brain text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Psicología</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-book-open-reader text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Educación</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-dna text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Anatomía</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-scale-balanced text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Derecho Constitucional</span>
+        </div>
+
+        <div class="flex cursor-pointer items-center gap-[14px] rounded-[18px] bg-white dark:bg-[#182338] dark:text-white dark:shadow-black/40 px-6 py-[18px] shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-[#20427a] hover:text-white dark:hover:bg-[#2a487a]">
+            <i class="fa-solid fa-earth-americas text-[20px] text-[#3869F3]"></i>
+            <span class="font-medium">Medio Ambiente</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="px-[7%] py-5">
+
+    <div class="mb-[20px] flex items-center justify-between">
+
+        <div>
+
+            <h2 class="mb-2 text-[34px] font-bold text-[#071B3B] dark:text-white">
+                Autores Destacados
+            </h2>
+
+            <p class="text-gray-500 dark:text-gray-400">
+                Investigadores y autores más consultados por la comunidad universitaria.
+            </p>
+
+        </div>
+
+        <a href=""
+            class="font-medium text-[17px] text-[#3869F3] transition hover:text-blue-700">
+
+            Ver todos
+            <i class="fa-solid fa-arrow-right ml-1"></i>
+
+        </a>
+
+    </div>
+
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[30px]">
+
+
+        <div class="group rounded-[18px] bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 text-center shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)]">
+
+            <img
+                src="./img/Andrew.jpg"
+                alt="Autor"
+                class="mx-auto mb-5 h-[140px] w-[140px] rounded-full object-cover ring-4 ring-blue-100 transition group-hover:ring-blue-400">
+
+            <h3 class="text-[22px] font-semibold text-[#071B3B] dark:text-white">
+                Andrew Tanenbaum
+            </h3>
+
+            <span class="mt-2 block text-[15px] text-[#3869F3]">
+                Redes y Sistemas
+            </span>
+
+        </div>
+
+
+        <div class="group rounded-[18px] bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 text-center shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)]">
+
+            <img
+                src="./img/Mario_B.jpg"
+                alt="Autor"
+                class="mx-auto mb-5 h-[140px] w-[140px] rounded-full object-cover ring-4 ring-blue-100 transition group-hover:ring-blue-400">
+
+            <h3 class="text-[22px] font-semibold text-[#071B3B] dark:text-white">
+                Mario Bunge
+            </h3>
+
+            <span class="mt-2 block text-[15px] text-[#3869F3]">
+                Investigación Científica
+            </span>
+
+        </div>
+
+
+        <div class="group rounded-[18px] bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 text-center shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)]">
+
+            <img
+                src="./img/Robert_Martin.jpg"
+                alt="Autor"
+                class="mx-auto mb-5 h-[140px] w-[140px] rounded-full object-cover ring-4 ring-blue-100 transition group-hover:ring-blue-400">
+
+            <h3 class="text-[22px] font-semibold text-[#071B3B] dark:text-white">
+                Robert Martin
+            </h3>
+
+            <span class="mt-2 block text-[15px] text-[#3869F3]">
+                Programación
+            </span>
+
+        </div>
+
+
+        <div class="group rounded-[18px] bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 text-center shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)]">
+
+            <img
+                src="./img/Malala_Yousafzai.jpg"
+                alt="Autor"
+                class="mx-auto mb-5 h-[140px] w-[140px] rounded-full object-cover ring-4 ring-blue-100 transition group-hover:ring-blue-400">
+
+            <h3 class="text-[22px] font-semibold text-[#071B3B] dark:text-white">
+                Malala Yousafzai
+            </h3>
+
+            <span class="mt-2 block text-[15px] text-[#3869F3]">
+                Educación
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="mx-[7%] my-10 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
+
+    <div class="flex items-center gap-5 rounded-2xl bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <i class="fa-solid fa-book text-5xl text-blue-600"></i>
+        <div>
+            <h3 class="text-3xl font-bold text-[#071B3B] dark:text-white">20 000+</h3>
+            <p class="text-gray-500 dark:text-gray-400">Libros digitales</p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-5 rounded-2xl bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <i class="fa-solid fa-graduation-cap text-5xl text-blue-600"></i>
+        <div>
+            <h3 class="text-3xl font-bold text-[#071B3B] dark:text-white">4 500+</h3>
+            <p class="text-gray-500 dark:text-gray-400">Tesis disponibles</p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-5 rounded-2xl bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <i class="fa-solid fa-file-lines text-5xl text-blue-600"></i>
+        <div>
+            <h3 class="text-3xl font-bold text-[#071B3B] dark:text-white">500+</h3>
+            <p class="text-gray-500 dark:text-gray-400">Revistas científicas</p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-5 rounded-2xl bg-white dark:bg-[#182338] dark:shadow-black/40 p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <i class="fa-solid fa-users text-5xl text-blue-600"></i>
+        <div>
+            <h3 class="text-3xl font-bold text-[#071B3B] dark:text-white">5 000+</h3>
+            <p class="text-gray-500 dark:text-gray-400">Usuarios activos</p>
+        </div>
+    </div>
+
+</section>
+
+
+<footer class="mt-16 bg-[#071B3B] dark:bg-[#0b1120] text-white">
+
+    <div class="mx-auto grid max-w-7xl grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-10 px-[7%] py-14">
+
+        <div>
+
+            <h2 class="mb-5 text-3xl font-bold">
+                Biblioteca UNT
+            </h2>
+
+            <p class="leading-8 text-gray-300">
+                Plataforma virtual de recursos académicos para estudiantes,
+                docentes e investigadores.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 class="mb-5 text-2xl font-semibold">
+                Ubicaciones
+            </h3>
+
+            <p class="mb-5 leading-7 text-gray-300">
+                <strong>Local Central:</strong><br>
+                Jr. Diego de Almagro N° 344 Trujillo - La Libertad<br>
+                Jr. Independencia N° 389 Trujillo - La Libertad
+            </p>
+
+            <p class="leading-7 text-gray-300">
+                <strong>Ciudad Universitaria:</strong><br>
+                Av. Juan Pablo II S/N Urb. San Andrés Trujillo - La Libertad
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 class="mb-5 text-2xl font-semibold">
+                Contacto
+            </h3>
+
+            <p class="mb-2 text-gray-300">
+                (044) 209020
+            </p>
+
+            <p class="mb-2 text-gray-300">
+                tdsgunt@unitru.edu.pe
+            </p>
+
+            <a href="https://www.unitru.edu.pe/" target="_blank" class="mb-6 inline-block text-blue-300 transition hover:text-white">
+                www.unitru.edu.pe
+            </a>
+
+            <div class="mt-4 flex flex-col gap-2">
+
+                <a href="" class="transition hover:text-blue-300">
+                    Términos y condiciones
+                </a>
+
+                <a href="" class="transition hover:text-blue-300">
+                    Política de Privacidad
+                </a>
+
+                <a href="" class="transition hover:text-blue-300">
+                    Soporte
+                </a>
+
+            </div>
+
+            <div class="mt-8 flex gap-4">
+
+                <a href="https://www.facebook.com/untlaunicaoficial"
+                    target="_blank"
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-blue-600">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a href="https://www.youtube.com/@untcanal/videos"
+                    target="_blank"
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-red-600">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="border-t border-white/10 py-5 text-center text-sm text-gray-400">
+
+        © 2026 Biblioteca Virtual UNT - Todos los derechos reservados.
+
+    </div>
+
+</footer>
+
+
+<div class="modulo_acceder fixed inset-0 z-[4000] hidden items-center justify-center bg-black/60 backdrop-blur-sm">
+
+    <div class="contenido_modal relative w-[90%] max-w-[420px] rounded-3xl bg-white p-8 shadow-2xl dark:bg-[#182338] dark:text-white">
+
+        <button
+            class="cerrar_modal absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition hover:bg-gray-100 hover:text-red-500">
+
+            <i class="fa-solid fa-xmark text-lg"></i>
+
+        </button>
+
+        <h2 class="mb-8 text-center text-3xl font-bold text-[#071B3B] dark:text-white">
+            Iniciar Sesión
+        </h2>
+
+        <form id="form_login" class="space-y-5">
+
+            <div>
+
+                <label
+                    for="correo"
+                    class="mb-2 block font-medium text-[#071B3B] dark:text-white">
+
+                    Correo
+
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="ejemplo@unitru.edu.pe"
+                    class="w-full rounded-xl border border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <div>
+
+                <label
+                    for="password"
+                    class="mb-2 block font-medium text-[#071B3B] dark:text-white">
+
+                    Contraseña
+
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="********"
+                    class="w-full rounded-xl border border-gray-300 border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn_login w-full rounded-xl bg-[#3869F3] py-3 font-semibold text-white transition hover:bg-blue-700">
+
+                Acceder
+
+            </button>
+
+            <p class="mensaje_login text-center font-medium"></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+    const botonOscuro = document.querySelector(".modo_oscuro");
+
+    const botonLogin = document.querySelector(".inicio_sesion");
+
+    const modal = document.querySelector(".modulo_acceder");
+
+    const cerrarModal = document.querySelector(".cerrar_modal");
+
+    const formLogin = document.querySelector("#form_login");
+
+    const correo = document.querySelector("#correo");
+
+    const password = document.querySelector("#password");
+
+    const mensajeLogin = document.querySelector(".mensaje_login");
+
+    const btnMenu = document.querySelector("#btnMenu");
+
+    const menuMovil = document.querySelector("#menuMovil");
+
+    const botonesNav = document.querySelector("#botonesNav");
+
+    btnMenu.addEventListener("click", () => {
+
+        menuMovil.classList.toggle("hidden");
+
+        botonesNav.classList.toggle("hidden");
+
+    });
+
+    botonOscuro.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+    });
+
+    botonLogin.addEventListener("click", () => {
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+    });
+
+    cerrarModal.addEventListener("click", () => {
+
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+
+    });
+
+    modal.addEventListener("click", (e) => {
+
+        if (e.target === modal) {
+
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+
+        }
+
+    });
+
+    formLogin.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        if (correo.value === "" || password.value === "") {
+
+            mensajeLogin.textContent = "Completa todos los campos";
+            mensajeLogin.className = "mensaje_login text-center font-medium text-red-600";
+            return;
+
+        }
+
+        mensajeLogin.textContent = "Inicio de sesión exitoso";
+        mensajeLogin.className = "mensaje_login text-center font-medium text-green-600";
+
+        setTimeout(() => {
+
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+
+            formLogin.reset();
+
+            mensajeLogin.textContent = "";
+
+        }, 1500);
+
+    });
+
+</script>
+
+</body>
+
+</html>
